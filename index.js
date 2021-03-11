@@ -1,4 +1,8 @@
-const userObj = require('./user');
+const http = require('http');
+const PORT = 3000;
 
-console.log(`Меня зовут ${userObj.name}, мне ${userObj.age} лет`);
-console.log(`Сейчас мы находимся в директории ${__dirname}, и работаем с файлом ${__filename}`);
+http.createServer((request, response) => {
+    response.end('Hello Node JS');
+}).listen(PORT, '127.0.0.1', () => {
+    console.log(`Сервер начал прослушивание запросов на порту ${PORT}`)
+});
